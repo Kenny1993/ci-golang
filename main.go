@@ -6,7 +6,7 @@ import (
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	err := io.WriteString(w, "Hello World!")
+	_, err := io.WriteString(w, "Hello World!")
 	if err != nil {
 		panic(err)
 	}
