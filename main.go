@@ -1,15 +1,15 @@
 package main
 
-import(
-  "net/http"
-  "io"
+import (
+	"io"
+	"net/http"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request){
-  io.WriteString(w, "Hello World!")
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+	io.WriteString(w, "Hello World!")
 }
 
-func main(){
-  http.HandleFunc("/hello",helloHandler)
-  http.ListenAndServe(":8080",nil)
+func main() {
+	http.HandleFunc("/hello", helloHandler)
+	http.ListenAndServe(":8080", nil)
 }
